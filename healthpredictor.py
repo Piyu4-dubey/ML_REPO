@@ -3,9 +3,9 @@ import numpy as np
 import pickle
 
 # ---- Load trained model and scaler ----
-model = pickle.load(open("models/mental_health_model.pkl", "rb"))
-scaler = pickle.load(open("moels/scaler.pkl", "rb"))
-tips_dict=pickle.load(open("models/mental_health_tips.pkl","rb"))
+model = pickle.load(open("mental_health_model.pkl", "rb"))
+scaler = pickle.load(open("scaler.pkl", "rb"))
+tips_dict=pickle.load(open("mental_health_tips.pkl","rb"))
 
 # -- App Header --
 st.title("Mental Health Predictor System")
@@ -48,5 +48,6 @@ if st.button("Predict Mental Health Risk"):
     st.subheader("📝 Prediction Result")
     st.markdown(f"**Mental Health Risk Score:** {risk_score:.2f}/100")
     st.markdown(f"**Risk Category:** <span style='color:{color}'>{category}</span>", unsafe_allow_html=True)
+
 
 
